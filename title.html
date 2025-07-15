@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title Display</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom right, #000000, #2a0a3f);
+      font-family: 'Lexend', sans-serif;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .container {
+      padding: 20px 40px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .title {
+      font-size: 4vw;
+      font-weight: 400;
+    }
+
+    .highlight {
+      font-size: 6vw;
+      font-weight: 700;
+    }
+
+    .gradient-bar {
+      width: 90%;
+      max-width: 800px;
+      height: 8px;
+      background: linear-gradient(to right, #f72ea7, #f7941d);
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+
+    .logo {
+      width: 160px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title" id="titleOutput"></div>
+    <div class="highlight" id="highlightOutput"></div>
+    <div class="gradient-bar"></div>
+    <img class="logo" src="https://www.splunk.com/content/dam/splunk2/en_us/images/events/mediakit/splunk-corp-logo-w-rgb.png" alt="Splunk Logo">
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('titleOutput').textContent = params.get('title') || 'AI Assistant for SPL';
+    document.getElementById('highlightOutput').textContent = params.get('highlight') || 'Write SPL';
+  </script>
+</body>
+</html>
